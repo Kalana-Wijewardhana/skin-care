@@ -12,10 +12,17 @@ const Footer = () => {
           {/* Brand */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center">
+              {/* <div className="w-10 h-10 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center">
                 <span className="text-primary-foreground font-bold">L</span>
-              </div>
-              <span className="font-bold text-lg">Lavish</span>
+              </div> */}
+              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg overflow-hidden flex items-center justify-center transform group-hover:scale-110 transition-transform">
+              <img
+                src="/logo.jpeg"
+                alt="SHAKYA Skin Care Logo"
+                className="w-full h-full object-contain"
+              />
+            </div>
+              <span className="font-bold text-lg">SHAKYA Skin Care</span>
             </div>
             <p className="text-background/70 leading-relaxed">
               Premium skincare and wellness treatments for timeless beauty and confidence.
@@ -55,15 +62,15 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-start gap-2">
                 <MapPin className="w-5 h-5 mt-0.5 flex-shrink-0" />
-                <span className="text-background/70">212/6A, Puttalam Road, Kurunegala</span>
+                <span className="text-background/70">Digana, Kengalla, Sri Lanka</span>
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="w-5 h-5 flex-shrink-0" />
-                <span className="text-background/70">077 6 600 300</span>
+                <span className="text-background/70">074 118 8139</span>
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="w-5 h-5 flex-shrink-0" />
-                <span className="text-background/70">info@lavish.lk</span>
+                <span className="text-background/70">kghpradeepa1989@gmail.com</span>
               </li>
             </ul>
           </div>
@@ -73,7 +80,7 @@ const Footer = () => {
             <h3 className="font-bold mb-4">Connect With Us</h3>
             <div className="flex gap-4">
               <a
-                href="https://web.facebook.com/lavishskinwellness/"
+                href="https://www.facebook.com/share/1GsKtQX8iB/?mibextid=wwXIfr"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-12 h-12 bg-background/20 hover:bg-primary text-background hover:text-primary-foreground rounded-full flex items-center justify-center transition-all transform hover:scale-110"
@@ -91,7 +98,7 @@ const Footer = () => {
                 <Twitter className="w-5 h-5" />
               </a>
               <a
-                href="https://wa.me/94776600300"
+                href="https://wa.me/94741188139"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-12 h-12 bg-background/20 hover:bg-green-500 text-background hover:text-white rounded-full flex items-center justify-center transition-all transform hover:scale-110"
@@ -124,7 +131,7 @@ const Footer = () => {
 
         {/* Bottom */}
         <div className="border-t border-background/20 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-background/70">
-          <p>&copy; 2025 Lavish Skin Wellness. All rights reserved.</p>
+          <p>&copy; 2025 SHAKYA Skin Care. All rights reserved.</p>
           <div className="flex gap-6">
             <Link href="#" className="hover:text-background transition-colors">
               Privacy Policy

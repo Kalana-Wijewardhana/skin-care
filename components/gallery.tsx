@@ -98,7 +98,7 @@ const Gallery = () => {
           <span className="text-primary font-semibold text-sm">TRANSFORMATIONS</span>
           <h2 className="text-4xl sm:text-5xl font-bold text-foreground mt-3 mb-4">
             Real Results,{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
+            <span className="bg-gradient-to-r from-primary via-accent to-purple-500 bg-clip-text text-transparent">
               Real Transformations
             </span>
           </h2>

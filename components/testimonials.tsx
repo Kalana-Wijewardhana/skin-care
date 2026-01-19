@@ -26,7 +26,7 @@ const testimonials = [
     role: "Treatment: Botox & Fillers",
     image: "ED",
     rating: 5,
-    text: "Best decision ever! The results are so natural and beautiful. Everyone keeps asking me what I did differently. I highly recommend Lavish Skin Wellness to anyone considering treatments.",
+    text: "Best decision ever! The results are so natural and beautiful. Everyone keeps asking me what I did differently. I highly recommend SHAKYA Skin Care to anyone considering treatments.",
     bgImage: "/skincare-results-before-after-beautiful.jpg",
   },
   {
@@ -89,10 +89,10 @@ const Testimonials = () => {
     return () => clearInterval(interval)
   }, [autoplay])
 
-  const goToSlide = (index) => {
-    setCurrent(index)
-    setAutoplay(false)
-  }
+const goToSlide = (index: number) => {
+  setCurrent(index)
+  setAutoplay(false)
+}
 
   const nextSlide = () => {
     setCurrent((prev) => (prev + 1) % testimonials.length)
@@ -111,7 +111,7 @@ const Testimonials = () => {
           <span className="text-primary font-semibold text-sm">TESTIMONIALS</span>
           <h2 className="text-4xl sm:text-5xl font-bold text-foreground mt-3">
             What our clients{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">say about us</span>
+            <span className="bg-gradient-to-r from-primary via-accent to-purple-500 bg-clip-text text-transparent">say about us</span>
           </h2>
         </div>
 

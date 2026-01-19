@@ -25,12 +25,30 @@ const Navigation = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          {/* Logo - Updated brand name to "Skin care" */}
-          <Link href="/" className="flex items-center gap-2 group">
+          {/* Logo - Updated brand name to "SHAKYA Skin Care" */}
+          {/* <Link href="/" className="flex items-center gap-2 group">
             <div className="w-10 h-10 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center transform group-hover:scale-110 transition-transform">
               <span className="text-primary-foreground font-bold text-lg">S</span>
             </div>
-            <span className="hidden sm:inline font-bold text-lg text-foreground">Skin care</span>
+            <span className="hidden sm:inline font-bold text-lg text-foreground">SHAKYA Skin Care</span>
+          </Link> */}
+
+          {/* Logo with more responsive sizing */}
+          <Link href="/" className="flex items-center gap-2 group">
+            <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg overflow-hidden flex items-center justify-center transform group-hover:scale-110 transition-transform">
+              <img
+                src="/logo.jpeg"
+                alt="SHAKYA Skin Care Logo"
+                className="w-full h-full object-contain"
+              />
+            </div>
+           
+                <span className="hidden sm:inline font-bold text-lg">
+                  <span className="bg-gradient-to-r from-primary via-accent to-purple-500 bg-clip-text text-transparent">
+                    SHAKYA
+                  </span>{' '}
+                  <span className="text-foreground">Skin Care</span>
+                </span>
           </Link>
 
           {/* Desktop Menu */}

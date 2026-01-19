@@ -1,11 +1,14 @@
+
 "use client"
 
-import { useEffect, useState } from "react"
-import { ChevronDown, Play } from "lucide-react"
+import { useEffect, useState, useRef } from "react"
+import { ChevronDown, Play, RefreshCw } from "lucide-react"
 
 const Hero = () => {
   const [offset, setOffset] = useState(0)
   const [showVideo, setShowVideo] = useState(false)
+  const [videoEnded, setVideoEnded] = useState(false)
+  const videoRef = useRef<HTMLVideoElement>(null)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,6 +18,23 @@ const Hero = () => {
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
+
+  const handleVideoEnd = () => {
+    setVideoEnded(true)
+  }
+
+  const replayVideo = () => {
+    if (videoRef.current) {
+      videoRef.current.currentTime = 0
+      videoRef.current.play()
+      setVideoEnded(false)
+    }
+  }
+
+  const closeVideo = () => {
+    setShowVideo(false)
+    setVideoEnded(false)
+  }
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
@@ -48,7 +68,7 @@ const Hero = () => {
 
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-foreground mb-6 leading-tight text-balance">
             Timeless{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Beauty</span> Starts
+            <span className="bg-gradient-to-r from-primary via-accent to-purple-500 bg-clip-text text-transparent">Beauty</span> Starts
             Here
           </h1>
 
@@ -67,6 +87,7 @@ const Hero = () => {
           </div>
         </div>
 
+        {/* Video Section */}
         <div className="mt-16 relative">
           <div className="mx-auto max-w-4xl">
             <div className="aspect-video bg-gradient-to-br from-primary/20 to-accent/20 rounded-3xl overflow-hidden shadow-2xl animate-float">
@@ -87,13 +108,40 @@ const Hero = () => {
                   </button>
                 </div>
               ) : (
-                <iframe
-                  className="w-full h-full"
-                  src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1"
-                  title="Skin care - Skincare Treatment Video"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
+                <div className="relative w-full h-full">
+                  <video
+                    ref={videoRef}
+                    className="w-full h-full object-cover"
+                    src="/intro.mp4"
+                    title="Skin care - Skincare Treatment Video"
+                    autoPlay
+                    controls={!videoEnded}
+                    playsInline
+                    onEnded={handleVideoEnd}
+                    onError={() => {
+                      console.error("Video failed to load")
+                      setShowVideo(false)
+                    }}
+                  />
+                  
+                  {videoEnded && (
+                    <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/70 gap-4 backdrop-blur-sm">
+                      <button
+                        onClick={replayVideo}
+                        className="px-6 py-3 bg-primary text-primary-foreground rounded-full hover:bg-primary/90 transition-colors font-semibold flex items-center gap-2 hover:scale-105 transition-transform"
+                      >
+                        <RefreshCw className="w-5 h-5" />
+                        Replay Video
+                      </button>
+                      <button
+                        onClick={closeVideo}
+                        className="px-6 py-3 bg-white/20 text-white rounded-full hover:bg-white/30 transition-colors backdrop-blur-sm hover:scale-105 transition-transform"
+                      >
+                        Back to Thumbnail
+                      </button>
+                    </div>
+                  )}
+                </div>
               )}
             </div>
           </div>

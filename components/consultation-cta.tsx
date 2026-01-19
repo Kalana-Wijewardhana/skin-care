@@ -21,8 +21,8 @@ const ConsultationCTA = () => {
               {!showVideo ? (
                 <div className="relative">
                   <img
-                    src="/dr-consultation-professional-skincare.jpg"
-                    alt="Consultation with Dr. Nathalie Herath"
+                    src="/luxurious-spa-facial-treatment-professional-skinca.jpg"
+                    alt="Consultation with Dr. Harshani Gunarathna"
                     className="w-full h-full object-cover"
                   />
                   <button
@@ -37,8 +37,8 @@ const ConsultationCTA = () => {
               ) : (
                 <iframe
                   className="w-full aspect-video"
-                  src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1"
-                  title="Dr. Nathalie Herath - Consultation Video"
+                  src="/intro.mp4"
+                  title="Dr. Harshani Gunarathna - Consultation Video"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                 />
@@ -52,13 +52,15 @@ const ConsultationCTA = () => {
             <h2 className="text-4xl sm:text-5xl font-bold text-foreground mt-3 mb-6">
               Meet Our Expert{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
-                Dr. Nathalie Herath
+                Dr. Harshani Gunarathna
               </span>
             </h2>
 
             <p className="text-muted-foreground text-lg mb-6 leading-relaxed">
-              With over 4 years of experience and international certifications including AAAM (USA) and FAM (UICAM), Dr.
-              Nathalie Herath brings world-class expertise to every treatment.
+              Dr. Harshani Gunarathna
+Your certified aesthetic doctor for personalized unisex skincare.
+MBBS, SLMC Reg. No. 36755 | Fellowship in Aesthetic Medicine, (IISAMED India) Dr.
+              Harshani Gunarathna brings world-class expertise to every treatment.
             </p>
 
             <div className="space-y-4 mb-8">

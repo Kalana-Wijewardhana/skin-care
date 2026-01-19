@@ -63,7 +63,16 @@ const services = [
   },
 ]
 
-const ServiceCard = ({ id, icon: Icon, title, description, image, index }) => {
+interface ServiceCardProps {
+  id: string;
+  icon: React.ComponentType<{ className?: string }>;
+  title: string;
+  description: string;
+  image: string;
+  index: number;
+}
+
+const ServiceCard = ({ id, icon: Icon, title, description, image, index }: ServiceCardProps) => {
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -113,13 +122,21 @@ const Services = () => {
     <section id="services" className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">
       <div className="max-w-7xl mx-auto">
         <div ref={ref} className={`text-center mb-16 ${inView ? "animate-slide-up" : ""}`}>
-          <span className="text-primary font-semibold text-sm">WHAT WE OFFER</span>
+          {/* <span className="text-primary font-semibold text-sm">WHAT WE OFFER</span>
           <h2 className="text-4xl sm:text-5xl font-bold text-foreground mt-3 mb-6">
             Smile with the{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
               reflection of the glow
             </span>
+          </h2> */}
+          <span className="text-primary font-semibold text-sm">WHAT WE OFFER</span>
+          <h2 className="text-4xl sm:text-5xl font-bold text-foreground mt-3 mb-6">
+            Smile with the{" "}
+            <span className="bg-gradient-to-r from-primary via-accent to-purple-500 bg-clip-text text-transparent">
+              reflection of the glow
+            </span>
           </h2>
+         
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
             Comprehensive skincare and wellness treatments tailored to your unique needs.
           </p>

@@ -14,7 +14,7 @@ const reasons = [
   {
     icon: Award,
     title: "Expert Team",
-    description: "Led by Dr. Nathalie Herath with international certifications.",
+    description: "Led by Dr. Harshani Gunarathna with international certifications.",
     image: "/professional-dermatologist-expert-consultation.png",
   },
   {
@@ -48,7 +48,7 @@ const WhyChooseUs = () => {
           <span className="text-primary font-semibold text-sm">WHY CHOOSE US</span>
           <h2 className="text-4xl sm:text-5xl font-bold text-foreground mt-3">
             Because it feels great in a{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">glowing skin</span>
+            <span className="bg-gradient-to-r from-primary via-accent to-purple-500 bg-clip-text text-transparent">glowing skin</span>
           </h2>
         </div>
 
